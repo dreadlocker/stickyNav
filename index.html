@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Sticky Nav</title>
+  </head>
+
+  <body>
+    <h1 id="header">Some heading</h1>
+    <div id="wrapper">
+      <div class="nav">
+        <div>Home</div>
+        <div>About</div>
+        <div>Images</div>
+        <div>Locations</div>
+        <div>Maps</div>
+      </div>
+    </div>
+    <p id="text">
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus
+      aut laborum saepe, non iusto officia corrupti! Consequatur ratione dolorum
+      voluptatum deserunt dolor repudiandae sit rerum, minus dolorem velit esse
+      ipsum? Dicta quia, ea natus sed assumenda blanditiis a ratione omnis qui
+      totam illo animi aspernatur earum, incidunt, similique dolorem voluptas
+      nobis! Maxime earum beatae cupiditate, dicta vel quidem aut iusto!
+      Doloremque, voluptatem nobis adipisci ducimus nam assumenda dolores.
+      Deleniti quo omnis temporibus ipsam, iusto, in voluptas ab, accusantium
+      iure autem provident illo. Minima aut reiciendis asperiores quis
+      architecto possimus repellat! Magnam eum similique minima fugit incidunt,
+      minus pariatur odit voluptatum cumque voluptate accusamus! Consequuntur
+      laudantium dolore saepe optio similique perferendis sapiente ab officiis
+      cumque et? Ipsam sed magnam provident placeat. Deserunt blanditiis,
+      accusantium voluptatibus nostrum dolorem qui vitae at libero sequi saepe,
+      expedita ipsam voluptatum cumque iure nesciunt perspiciatis fuga
+      molestiae. Sequi ullam exercitationem at alias libero maxime magni
+      pariatur.
+    </p>
+
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+        background-color: black;
+        color: #bababa;
+      }
+
+      #header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 10em;
+        margin: 0;
+      }
+
+      .nav {
+        display: flex;
+        justify-content: space-around;
+        padding: 1em 0;
+        background-color: #6e2c2c;
+        width: 100%;
+      }
+
+      #text {
+        font-size: 6em;
+        margin: 0;
+      }
+
+      .fixed {
+        position: fixed;
+        top: 0;
+      }
+    </style>
+
+    <script>
+      const nav = document.getElementsByClassName("nav")[0];
+      const topOfNav = nav.offsetTop;
+      const textStyle = document.getElementById("text").style;
+
+      function checkScroll(e) {
+        if (window.scrollY >= topOfNav) {
+          nav.classList.add("fixed");
+          textStyle.paddingTop = nav.offsetHeight + "px"; // give paddingTop to the DOM element under the Nav, so there is no glitch
+          return;
+        }
+
+        nav.classList.remove("fixed");
+        textStyle.paddingTop = "";
+      }
+
+      window.addEventListener("scroll", checkScroll);
+    </script>
+  </body>
+</html>
