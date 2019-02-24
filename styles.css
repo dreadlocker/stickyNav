@@ -1,0 +1,49 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  color: #bababa;
+}
+
+#header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10em;
+  margin: 0;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-around;
+  padding: 1em 0;
+  background-color: #6e2c2c;
+  width: 100%;
+}
+
+/* !!! version 2 - only CSS no JS => 
+delete the above .nav CSS, 
+uncomment this .nav CSS, 
+delete everything inside <script> tag */
+/* .nav {
+    display: flex;
+    justify-content: space-around;
+    background-color: #6e2c2c;
+    padding: 1em 0;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+} */
+
+#text {
+  font-size: 3em;
+  margin: 0;
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
+}
